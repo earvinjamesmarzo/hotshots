@@ -1,0 +1,31 @@
+<!-- <ion-view title="Check Out"> -->
+<ion-view title="">
+    <ion-content padding="'true'" class="has-header">
+		<div ng-show="loggedin()">
+			<div class="button-bar">
+				<a href="#/page4" class="button button-balanced button-block">Login</a>
+				<a href="#/page14" class="button button-calm button-block">Register</a>
+			</div>
+			<div>
+				<p>Or</p>
+			</div>
+		</div>
+        <form class="list">
+            <label class="item item-input">
+                <span class="input-label" style="padding-right:75px">Name*</span>
+                <textarea placeholder="" ng-model="name" id="coname">{{" "+loggedin_name}}</textarea>
+            </label>
+            <label class="item item-input">
+                <span class="input-label" style="padding-right:10px" >Phone Number*</span>
+                <textarea placeholder="" ng-model="number" id="conumber">{{" "+loggedin_phone}}</textarea>
+            </label>
+            <label class="item item-input">
+                <span class="input-label" style="padding-right:0px">Address*</span>
+				<textarea placeholder="" ng-model="address" id="coaddress">{{" "+loggedin_address}}</textarea>
+            </label>
+        </form>
+		
+        <a ng-click="checkOut(name, number, address)" ng-show="!hasCheckedOut" class="button button-balanced button-outline button-block">Check Out</a>
+        <a class="button button-balanced button-outline button-block" ng-show="hasCheckedOut"><span class="ion-loading-b">TEST</span></a>
+    </ion-content>
+</ion-view>

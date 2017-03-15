@@ -1,0 +1,23 @@
+<!-- <ion-view title="Cart"> -->
+<ion-view title="">
+	<ion-content padding="'true'" class="has-header">
+		<div class="corners">
+			<div ng-repeat="item in cart">
+				<div class="item item-divider">{{item.cart_item_name}}</div>
+					<ion-item class="item-thumbnail-left">
+						<img ng-src="{{'img/'+ item.cart_item_image +'.png'}}" ng-click="showProductInfo(item.p_id, item.p_description, item.p_image_id, item.p_name, item.p_price)">
+						<h2 ng-click="showProductInfo(item.p_id, item.p_description, item.p_image_id, item.p_name, item.p_price)">{{item.p_name}}</h2>
+						<p>{{item.cart_item_qty}} x {{item.cart_item_price | currency: '₱'}} = <strong> {{item.cart_item_qty * item.cart_item_price | currency: '₱'}}</strong></p>
+						<div class="button-bar">
+							<button ng-click="removeFromCart(item.cart_item_id)" class="button button-assertive button-block button-small icon ion-android-delete"></button>
+							<button class="button button-stable button-clear button-block icon ion-minus" ng-click="dec(item.cart_item_id)"></button>
+							<button class="button button-stable button-clear button-block button-small">{{item.cart_item_qty}}</button>
+							<button class="button button-stable button-clear button-block button-small icon ion-plus" ng-click="inc(item.cart_item_id)"></button>
+						</div>
+					</ion-item>
+					<br>
+			</div>
+			<button ng-click="checkout()" class="checkout"><p>Total ({{total_qty}}) = <strong> {{total_amount | currency: '₱'}}</strong> Check Out</button>
+		</div>
+	</ion-content>
+</ion-view>
