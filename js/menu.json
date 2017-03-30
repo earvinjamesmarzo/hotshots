@@ -1,572 +1,491 @@
 {
-  "categories": [
-    {
-      "id": 1,
-      "name": "Breakfast"
-    },
-    {
-      "id": 2,
-      "name": "Beverage"
-    },
-    {
-      "id": 3,
-      "name": "Burger"
-    },
-    {
-      "id": 4,
-      "name": "Dessert"
-    },
-    {
-      "id": 5,
-      "name": "Favorites"
-    },
-    {
-      "id": 6,
-      "name": "Fries"
-    },
-    {
-      "id": 7,
-      "name": "Hot Drinks"
-    },
-    {
-      "id": 8,
-      "name": "Pasta"
-    },
-    {
-      "id": 9,
-      "name": "Pitchers"
-    },
-    {
-      "id": 10,
-      "name": "Ricemeal"
-    },
-    {
-      "id": 11,
-      "name": "Salad"
-    },
-    {
-      "id": 12,
-      "name": "Sandwich"
-    },
-    {
-      "id": 13,
-      "name": "Soup"
-    }
-  ],
-  
-  "items": [
-    {
-      "id" : 1,
-      "name": "Burgeritos",
-      "category_id": 3,
-      "price": 195,
-      "description": "Quarter pound patty made into a tripple treat burger delight. Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 2,
-      "name": "Burger",
-      "category_id": 3,
-      "price": 135,
-      "description": "Quarter-pounder burger garnished with lettuce, tomatoes, onions, and mayonnaise. A perfect soulution for those who want it classic. Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 3,
-      "name": "Cheese Burger",
-      "category_id": 3,
-      "price": 145,
-      "description": "Quarter-pounder burger garnished with lettuce, tomatoes, onions, and mayonnaise, topped with our so so cream cheese. Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 4,
-      "name": "burger",
-      "category_id": 3,
-      "price": 135,
-      "description": "Quarter-pounder burger garnished with lettuce, tomatoes, onions, and mayonnaise. A perfect soulution for those who want it classic. Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 5,
-      "name": "Garlic Cheese Burger",
-      "category_id": 2,
-      "price": 145,
-      "description": "Quarter-pounder burger with lettuce topped with a mouth watering, special tangy garlic cheese spread. The Burger with a bite! Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 6,
-      "name": "Caramelized Onion Burger",
-      "category_id": 2,
-      "price": 135,
-      "description": "Quarter-pounder burger topped with caramelized onion, creamy cheese sauce and mayonnaise. Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 7,
-      "name": "Chicano",
-      "category_id": 2,
-      "price": 150,
-      "description": "Quarter-pounder burger with fresh homemade salsa, creamy cheese sause, lettuce, mayonnaise and the taste of mexico. Viva la burger! Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 8,
-      "name": "Kamikazee",
-      "category_id": 3,
-      "price": 145,
-      "description": "Quarte-pounder burger with our creamy cheese sauce, mayonnaise and lettuce, smoothered with wasabi sauce ... making this exotice burger historically significant. It's TO-DIE-FOR! Served with potata chips",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 9,
-      "name": "Real Blue Cheese Burger",
-      "category_id": 3,
-      "price": 185,
-      "description": "Quarter-pounder burger garnished with lettuce, coated with mayonnaise and toppped with blue cheese spread that will make your tongue tinggle. Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 10,
-      "name": "Crispy Burger Melt",
-      "category_id": 3,
-      "price": 195,
-      "description": "The hotshots best seller! Quarter-pounder burger generously toppped with sliced mushroom, crispy bacon bits, creamy cheese sauce and mayonnaise. THe unique flavor and texture is sure to deilght your plate. Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 11,
-      "name": "Ultimate Burger",
-      "category_id": 3,
-      "price": 235,
-      "description": "Double quarter-pounder burger garnished with onions, lettuce, tomatoes and mayyonaise, a mighty burger for those with tremendously big appetite. Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 12,
-      "name": "Ultimate Burger",
-      "category_id": 3,
-      "price": 235,
-      "description": "Double quarter-pounder burger garnished with onions, lettuce, tomatoes and mayyonaise, a mighty burger for those with tremendously big appetite. Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 13,
-      "name": "Ultimate Cheese Burger",
-      "category_id": 3,
-      "price": 245,
-      "description": "Double quarter-pounder burger garnished with onions, lettuce, tomatoes and mayyonaise, topped with our creamy cheese sauce. Definitely AHHH-MAZING. Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 14,
-      "name": "Mozarella Burger",
-      "category_id": 3,
-      "price": 260,
-      "description": "Double quarter-puner burger garnished with onions, lettuce, tomatoes, mayonnaise and mozarella cheese. Served with potato chips.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 15,
-      "name": "Bigshot Burger",
-      "category_id": 3,
-      "price": 549,
-      "description": "A mighty for those with tremendously big appetites! Comes with 300g pure beef patty, bacon, cucumber, onions, tomato, lettuce, mayo, cheese sauce an mozarella cheese. Served with french fries.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 16,
-      "name": "French Fries",
-      "category_id": 6,
-      "price": 60,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 17,
-      "name": "Twister Fries",
-      "category_id": 6,
-      "price": 99,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 18,
-      "name": "Potato Wedges",
-      "category_id": 6,
-      "price": 65,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 19,
-      "name": "Potato Wedges",
-      "category_id": 5,
-      "price": 65,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 20,
-      "name": "Grilled Beef Tacos (Solo)",
-      "category_id": 5,
-      "price": 85,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 21,
-      "name": "Grilled Beef Tacos (Duo)",
-      "category_id": 5,
-      "price": 165,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 22,
-      "name": "Tachos",
-      "category_id": 5,
-      "price": 145,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 23,
-      "name": "Fish and Fries",
-      "category_id": 5,
-      "price": 195,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 24,
-      "name": "Chicken with Fries",
-      "category_id": 5,
-      "price": 195,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 25,
-      "name": "Buffalo Chicken Wings",
-      "category_id": 5,
-      "price": 220,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 26,
-      "name": "Hungarian Sausage with Fries",
-      "category_id": 6,
-      "price": 295,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 27,
-      "name": "Kingfisher Sandwich",
-      "category_id": 12,
-      "price": 195,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 28,
-      "name": "Chicken Fillet Sandwich",
-      "category_id": 12,
-      "price": 195,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 29,
-      "name": "Asian Salad",
-      "category_id": 11,
-      "price": 180,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 30,
-      "name": "Garden Fresh Salad",
-      "category_id": 11,
-      "price": 180,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 31,
-      "name": "Grilled Chicken Bbq Salad",
-      "category_id": 11,
-      "price": 180,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 32,
-      "name": "Chaz Burger",
-      "category_id": 11,
-      "price": 180,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 33,
-      "name": "Mushroom Soup",
-      "category_id": 13,
-      "price": 60,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 34,
-      "name": "Pumpkin Soup",
-      "category_id": 13,
-      "price": 60,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 35,
-      "name": "Grilled Meatbals Spaghetti",
-      "category_id": 8,
-      "price": 220,
-      "description": "Italian style spaghetti with grilled meatballs.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 36,
-      "name": "Carbonara",
-      "category_id": 8,
-      "price": 170,
-      "description": "Cream base white sauce and pasta with bacon and mushroom.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 37,
-      "name": "Patanisa",
-      "category_id": 8,
-      "price": 170,
-      "description": "Vigan style pasta.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 38,
-      "name": "Sweet Spaghetti",
-      "category_id": 8,
-      "price": 140,
-      "description": "A sweet blend filipino style pasta.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 39,
-      "name": "Grilled Chicken w/ Pesto",
-      "category_id": 8,
-      "price": 170,
-      "description": "Oil based sauce with grilled chicken on top.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 40,
-      "name": "Rib Eye Steak",
-      "category_id": 10,
-      "price": 435,
-      "description": "Choice of rice or fries.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 41,
-      "name": "Pork Bbq",
-      "category_id": 10,
-      "price": 130,
-      "description": "Choice of rice or fries.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 42,
-      "name": "Chicken Fillet",
-      "category_id": 10,
-      "price": 150,
-      "description": "With Tartarae sauce or with mushroom gravy.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 43,
-      "name": "Fish Fillet",
-      "category_id": 10,
-      "price": 150,
-      "description": "With Tartarae sauce or with mushroom gravy.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 44,
-      "name": "Burger",
-      "category_id": 8,
-      "price": 150,
-      "description": "With mushroom gravy or with cheesemelt.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 45,
-      "name": "Fried Chicken (6pcs)",
-      "category_id": 8,
-      "price": 585,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 46,
-      "name": "Boneless Bangus with Salted Egg",
-      "category_id": 1,
-      "price": 190,
-      "description": "Deep fried marinated bangus.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 47,
-      "name": "Beef Tapa",
-      "category_id": 1,
-      "price": 200,
-      "description": "Deep fried marinated beef with sunny side up egg.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 48,
-      "name": "American Breakfast",
-      "category_id": 1,
-      "price": 220,
-      "description": "Toast bread with american ssausage, bacon and sunny side up egg.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 49,
-      "name": "Waffles with sausage",
-      "category_id": 1,
-      "price": 295,
-      "description": "Grilled hungarian sausage comes with waffle.",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 50,
-      "name": "Milkshakes",
-      "category_id": 2,
-      "price": 175,
-      "description": "Strawberry / Vanilla / Chocolate",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 51,
-      "name": "Soda Float",
-      "category_id": 2,
-      "price": 120,
-      "description": "Coke Regular / Coke Zero / Sprite / Royal / Sarsi",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 52,
-      "name": "Soda",
-      "category_id": 2,
-      "price": 55,
-      "description": "Coke Regular / Coke Zero / Sprite / Royal / Sarsi",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 53,
-      "name": "Bottled Water",
-      "category_id": 2,
-      "price": 35,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 54,
-      "name": "Juices",
-      "category_id": 1,
-      "price": 65,
-      "description": "Mango / Pineapple",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 55,
-      "name": "Beers",
-      "category_id": 1,
-      "price": 65,
-      "description": "San Mig Light / Pale Pilsen / Red Horse",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 56,
-      "name": "Red Iced Tea",
-      "category_id": 9,
-      "price": 160,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 57,
-      "name": "Soda",
-      "category_id": 9,
-      "price": 150,
-      "description": "Coke Regular / Coke Zero / Sprite / Royal / Sarsi",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 58,
-      "name": "Hot Tea",
-      "category_id": 7,
-      "price": 55,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 59,
-      "name": "Hot Choco",
-      "category_id": 7,
-      "price": 65,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 60,
-      "name": "Brewed Coffee",
-      "category_id": 7,
-      "price": 75,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 61,
-      "name": "French Vanilla",
-      "category_id": 9,
-      "price": 100,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 62,
-      "name": "Peach Melba",
-      "category_id": 4,
-      "price": 220,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 63,
-      "name": "Brownie Ala Mode",
-      "category_id": 4,
-      "price": 180,
-      "description": "",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    },
-    {
-      "id" : 64,
-      "name": "Sundae",
-      "category_id": 4,
-      "price": 85,
-      "description": "Chocolate / Vanilla / Strawberry",
-      "image_url": "http://iligtas.ph/renzo/1.png"
-    }
-    
-  ]
+	"categories": [{
+		"id": 1,
+		"name": "Breakfast"
+	}, {
+		"id": 2,
+		"name": "Beverage"
+	}, {
+		"id": 3,
+		"name": "Burger"
+	}, {
+		"id": 4,
+		"name": "Dessert"
+	}, {
+		"id": 5,
+		"name": "Favorites"
+	}, {
+		"id": 6,
+		"name": "Fries"
+	}, {
+		"id": 7,
+		"name": "Hot Drinks"
+	}, {
+		"id": 8,
+		"name": "Pasta"
+	}, {
+		"id": 9,
+		"name": "Pitchers"
+	}, {
+		"id": 10,
+		"name": "Ricemeal"
+	}, {
+		"id": 11,
+		"name": "Salad"
+	}, {
+		"id": 12,
+		"name": "Sandwich"
+	}, {
+		"id": 13,
+		"name": "Soup"
+	}],
+	"items": [{
+		"id": 1,
+		"name": "Burgeritos",
+		"category_id": 3,
+		"price": 195,
+		"description": "Quarter pound patty made into a tripple treat burger delight. Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 2,
+		"name": "Burger",
+		"category_id": 3,
+		"price": 135,
+		"description": "Quarter-pounder burger garnished with lettuce, tomatoes, onions, and mayonnaise. A perfect soulution for those who want it classic. Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 3,
+		"name": "Cheese Burger",
+		"category_id": 3,
+		"price": 145,
+		"description": "Quarter-pounder burger garnished with lettuce, tomatoes, onions, and mayonnaise, topped with our so so cream cheese. Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 4,
+		"name": "burger",
+		"category_id": 3,
+		"price": 135,
+		"description": "Quarter-pounder burger garnished with lettuce, tomatoes, onions, and mayonnaise. A perfect soulution for those who want it classic. Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 5,
+		"name": "Garlic Cheese Burger",
+		"category_id": 2,
+		"price": 145,
+		"description": "Quarter-pounder burger with lettuce topped with a mouth watering, special tangy garlic cheese spread. The Burger with a bite! Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 6,
+		"name": "Caramelized Onion Burger",
+		"category_id": 2,
+		"price": 135,
+		"description": "Quarter-pounder burger topped with caramelized onion, creamy cheese sauce and mayonnaise. Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 7,
+		"name": "Chicano",
+		"category_id": 2,
+		"price": 150,
+		"description": "Quarter-pounder burger with fresh homemade salsa, creamy cheese sause, lettuce, mayonnaise and the taste of mexico. Viva la burger! Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 8,
+		"name": "Kamikazee",
+		"category_id": 3,
+		"price": 145,
+		"description": "Quarte-pounder burger with our creamy cheese sauce, mayonnaise and lettuce, smoothered with wasabi sauce ... making this exotice burger historically significant. It's TO-DIE-FOR! Served with potata chips",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 9,
+		"name": "Real Blue Cheese Burger",
+		"category_id": 3,
+		"price": 185,
+		"description": "Quarter-pounder burger garnished with lettuce, coated with mayonnaise and toppped with blue cheese spread that will make your tongue tinggle. Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 10,
+		"name": "Crispy Burger Melt",
+		"category_id": 3,
+		"price": 195,
+		"description": "The hotshots best seller! Quarter-pounder burger generously toppped with sliced mushroom, crispy bacon bits, creamy cheese sauce and mayonnaise. THe unique flavor and texture is sure to deilght your plate. Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 11,
+		"name": "Ultimate Burger",
+		"category_id": 3,
+		"price": 235,
+		"description": "Double quarter-pounder burger garnished with onions, lettuce, tomatoes and mayyonaise, a mighty burger for those with tremendously big appetite. Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 12,
+		"name": "Ultimate Burger",
+		"category_id": 3,
+		"price": 235,
+		"description": "Double quarter-pounder burger garnished with onions, lettuce, tomatoes and mayyonaise, a mighty burger for those with tremendously big appetite. Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 13,
+		"name": "Ultimate Cheese Burger",
+		"category_id": 3,
+		"price": 245,
+		"description": "Double quarter-pounder burger garnished with onions, lettuce, tomatoes and mayyonaise, topped with our creamy cheese sauce. Definitely AHHH-MAZING. Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 14,
+		"name": "Mozarella Burger",
+		"category_id": 3,
+		"price": 260,
+		"description": "Double quarter-puner burger garnished with onions, lettuce, tomatoes, mayonnaise and mozarella cheese. Served with potato chips.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 15,
+		"name": "Bigshot Burger",
+		"category_id": 3,
+		"price": 549,
+		"description": "A mighty for those with tremendously big appetites! Comes with 300g pure beef patty, bacon, cucumber, onions, tomato, lettuce, mayo, cheese sauce an mozarella cheese. Served with french fries.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 16,
+		"name": "French Fries",
+		"category_id": 6,
+		"price": 60,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 17,
+		"name": "Twister Fries",
+		"category_id": 6,
+		"price": 99,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 18,
+		"name": "Potato Wedges",
+		"category_id": 6,
+		"price": 65,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 19,
+		"name": "Potato Wedges",
+		"category_id": 5,
+		"price": 65,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 20,
+		"name": "Grilled Beef Tacos (Solo)",
+		"category_id": 5,
+		"price": 85,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 21,
+		"name": "Grilled Beef Tacos (Duo)",
+		"category_id": 5,
+		"price": 165,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 22,
+		"name": "Tachos",
+		"category_id": 5,
+		"price": 145,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 23,
+		"name": "Fish and Fries",
+		"category_id": 5,
+		"price": 195,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 24,
+		"name": "Chicken with Fries",
+		"category_id": 5,
+		"price": 195,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 25,
+		"name": "Buffalo Chicken Wings",
+		"category_id": 5,
+		"price": 220,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 26,
+		"name": "Hungarian Sausage with Fries",
+		"category_id": 6,
+		"price": 295,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 27,
+		"name": "Kingfisher Sandwich",
+		"category_id": 12,
+		"price": 195,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 28,
+		"name": "Chicken Fillet Sandwich",
+		"category_id": 12,
+		"price": 195,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 29,
+		"name": "Asian Salad",
+		"category_id": 11,
+		"price": 180,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 30,
+		"name": "Garden Fresh Salad",
+		"category_id": 11,
+		"price": 180,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 31,
+		"name": "Grilled Chicken Bbq Salad",
+		"category_id": 11,
+		"price": 180,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 32,
+		"name": "Chaz Burger",
+		"category_id": 11,
+		"price": 180,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 33,
+		"name": "Mushroom Soup",
+		"category_id": 13,
+		"price": 60,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 34,
+		"name": "Pumpkin Soup",
+		"category_id": 13,
+		"price": 60,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 35,
+		"name": "Grilled Meatbals Spaghetti",
+		"category_id": 8,
+		"price": 220,
+		"description": "Italian style spaghetti with grilled meatballs.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 36,
+		"name": "Carbonara",
+		"category_id": 8,
+		"price": 170,
+		"description": "Cream base white sauce and pasta with bacon and mushroom.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 37,
+		"name": "Patanisa",
+		"category_id": 8,
+		"price": 170,
+		"description": "Vigan style pasta.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 38,
+		"name": "Sweet Spaghetti",
+		"category_id": 8,
+		"price": 140,
+		"description": "A sweet blend filipino style pasta.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 39,
+		"name": "Grilled Chicken w/ Pesto",
+		"category_id": 8,
+		"price": 170,
+		"description": "Oil based sauce with grilled chicken on top.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 40,
+		"name": "Rib Eye Steak",
+		"category_id": 10,
+		"price": 435,
+		"description": "Choice of rice or fries.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 41,
+		"name": "Pork Bbq",
+		"category_id": 10,
+		"price": 130,
+		"description": "Choice of rice or fries.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 42,
+		"name": "Chicken Fillet",
+		"category_id": 10,
+		"price": 150,
+		"description": "With Tartarae sauce or with mushroom gravy.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 43,
+		"name": "Fish Fillet",
+		"category_id": 10,
+		"price": 150,
+		"description": "With Tartarae sauce or with mushroom gravy.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 44,
+		"name": "Burger",
+		"category_id": 8,
+		"price": 150,
+		"description": "With mushroom gravy or with cheesemelt.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 45,
+		"name": "Fried Chicken (6pcs)",
+		"category_id": 8,
+		"price": 585,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 46,
+		"name": "Boneless Bangus with Salted Egg",
+		"category_id": 1,
+		"price": 190,
+		"description": "Deep fried marinated bangus.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 47,
+		"name": "Beef Tapa",
+		"category_id": 1,
+		"price": 200,
+		"description": "Deep fried marinated beef with sunny side up egg.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 48,
+		"name": "American Breakfast",
+		"category_id": 1,
+		"price": 220,
+		"description": "Toast bread with american ssausage, bacon and sunny side up egg.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 49,
+		"name": "Waffles with sausage",
+		"category_id": 1,
+		"price": 295,
+		"description": "Grilled hungarian sausage comes with waffle.",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 50,
+		"name": "Milkshakes",
+		"category_id": 2,
+		"price": 175,
+		"description": "Strawberry / Vanilla / Chocolate",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 51,
+		"name": "Soda Float",
+		"category_id": 2,
+		"price": 120,
+		"description": "Coke Regular / Coke Zero / Sprite / Royal / Sarsi",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 52,
+		"name": "Soda",
+		"category_id": 2,
+		"price": 55,
+		"description": "Coke Regular / Coke Zero / Sprite / Royal / Sarsi",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 53,
+		"name": "Bottled Water",
+		"category_id": 2,
+		"price": 35,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 54,
+		"name": "Juices",
+		"category_id": 1,
+		"price": 65,
+		"description": "Mango / Pineapple",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 55,
+		"name": "Beers",
+		"category_id": 1,
+		"price": 65,
+		"description": "San Mig Light / Pale Pilsen / Red Horse",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 56,
+		"name": "Red Iced Tea",
+		"category_id": 9,
+		"price": 160,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 57,
+		"name": "Soda",
+		"category_id": 9,
+		"price": 150,
+		"description": "Coke Regular / Coke Zero / Sprite / Royal / Sarsi",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 58,
+		"name": "Hot Tea",
+		"category_id": 7,
+		"price": 55,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 59,
+		"name": "Hot Choco",
+		"category_id": 7,
+		"price": 65,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 60,
+		"name": "Brewed Coffee",
+		"category_id": 7,
+		"price": 75,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 61,
+		"name": "French Vanilla",
+		"category_id": 9,
+		"price": 100,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 62,
+		"name": "Peach Melba",
+		"category_id": 4,
+		"price": 220,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 63,
+		"name": "Brownie Ala Mode",
+		"category_id": 4,
+		"price": 180,
+		"description": "",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}, {
+		"id": 64,
+		"name": "Sundae",
+		"category_id": 4,
+		"price": 85,
+		"description": "Chocolate / Vanilla / Strawberry",
+		"image_url": "http://iligtas.ph/renzo/1.png"
+	}]
 }
