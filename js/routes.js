@@ -68,6 +68,10 @@ angular.module('app.routes', []).config(function($stateProvider, $urlRouterProvi
 		url: '/page14',
 		templateUrl: 'templates/signup.html',
 		controller: 'signupCtrl'
+	}).state('orderStatus', {
+		url: '/page15',
+		templateUrl: 'templates/orderStatus.html',
+		controller: 'orderStatusCtrl'
 	});
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('/page4');

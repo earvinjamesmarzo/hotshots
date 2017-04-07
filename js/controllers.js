@@ -423,4 +423,14 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 		})
 	}
 	$scope.initMap();
-})
+}).controller('orderStatusCtrl', function($scope, $interval) {
+	$scope.Timer = null;
+	$scope.Timer = $interval(function () {
+		//Display the current time.
+		console.log("ASD");
+		
+		//Your order has been declined. Please try again.
+		//Delivery is on the way to you.
+		//Your order is being processed.
+	}, 1000);
+});
