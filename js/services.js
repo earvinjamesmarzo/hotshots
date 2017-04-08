@@ -1,4 +1,5 @@
-angular.module('app.services', []).factory('sharedCartService', ['$ionicPopup', function($ionicPopup) {
+angular.module('app.services', [])
+.factory('sharedCartService', ['$ionicPopup', function($ionicPopup) {
 	var cartObj = {};
 	cartObj.cart = [];
 	cartObj.total_amount = 0;
@@ -7,11 +8,11 @@ angular.module('app.services', []).factory('sharedCartService', ['$ionicPopup', 
 		if (cartObj.cart.find(id) != -1) {
 			var alertPopup = $ionicPopup.alert({
 				title: 'Product Already Added',
-				template: 'Increase the qty from the cart'
+				template: 'Increased the item quantity from the cart.'
 			});
-			//cartObj.cart[cartObj.cart.find(id)].cart_item_qty+=1;
-			//cartObj.total_qty+= 1;
-			//cartObj.total_amount+= parseInt(cartObj.cart[cartObj.cart.find(id)].cart_item_price);
+			cartObj.cart[cartObj.cart.find(id)].cart_item_qty+=1;
+			cartObj.total_qty+= 1;
+			cartObj.total_amount+= parseInt(cartObj.cart[cartObj.cart.find(id)].cart_item_price);
 		} else {
 			cartObj.cart.push({
 				"cart_item_id": id,
@@ -38,6 +39,16 @@ angular.module('app.services', []).factory('sharedCartService', ['$ionicPopup', 
 		}
 		return result;
 	};
+	cartObj.cart.findQuantity = function(id) {
+		var result = 0;
+		for (var i = 0, len = cartObj.cart.length; i < len; i++) {
+			if (cartObj.cart[i].cart_item_id === id) {
+				result = cartObj.cart[i].cart_item_qty;
+				break;
+			}
+		}
+		return result;
+	};
 	cartObj.cart.drop = function(id) {
 		var temp = cartObj.cart[cartObj.cart.find(id)];
 		cartObj.total_qty -= parseInt(temp.cart_item_qty);
@@ -59,7 +70,19 @@ angular.module('app.services', []).factory('sharedCartService', ['$ionicPopup', 
 		}
 	};
 	return cartObj;
-}]).factory('sharedFilterService', [function() {
+}])
+.factory('cartItemCountService', [function() {
+	var itemsObj = {};
+	itemsObj.count = 0;
+	itemsObj.increment = function(value) {
+		itemsObj.count += value;
+	};
+	itemsObj.decrement = function(value) {
+		itemsObj.count -= value;
+	};
+	return itemsObj;
+}])
+.factory('sharedFilterService', [function() {
 	var obj = {};
 	obj.str = "http://iligtas.ph/hotshots/food_menu.php?till=";
 	obj.sort = "";
@@ -76,8 +99,8 @@ angular.module('app.services', []).factory('sharedCartService', ['$ionicPopup', 
 		} else if (obj.sort != "") {
 			obj.str = obj.str + "&sort=" + obj.sort;
 		}
-		console.log("URL", obj.str);
 		return obj.str;
 	};
 	return obj;
-}]).service('BlankService', [function() {}]);
+}])
+.service('BlankService', [function() {}]);

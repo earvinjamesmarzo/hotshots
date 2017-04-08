@@ -7,13 +7,13 @@
 				<div> <img ng-src="{{'img/'+ slide.p_image_id +'.png'}}" ng-click="showProductInfo(slide.p_id,slide.p_description,slide.p_image_id,slide.p_name,slide.p_price)"> </div>
 			</ion-slide>
 		</ion-slide-box>
-		<div class="button-bar"> <a href="#/page6" class="button button-stable button-block  icon-left ion-android-funnel">Filter</a> <a href="#/page7" class="button button-stable button-block  icon ion-android-restaurant">Sort</a> </div>
+		<div class="button-bar"> <a href="#/page6" class="button button-stable button-block  icon-left ion-android-funnel">Filter</a> <a href="#/page7" class="button button-stable button-block  icon-left ion-android-restaurant">Sort</a> </div>
 		<ion-list ng-repeat="item in menu_items">
 			<ion-item class="item-thumbnail-left"> <img ng-src="{{'img/'+ item.p_image_id +'.png'}}" ng-click="showProductInfo(item.p_id,item.p_description,item.p_image_id,item.p_name,item.p_price)">
 				<p style="position: absolute; right: 10px;"> <a ng-click="addToCart(item.p_id,item.p_image_id,item.p_name,item.p_price)" class="button  button-balanced button-clear  "> Order </a> </p>
 				<h2 ng-click="showProductInfo(item.p_id,item.p_description,item.p_image_id,item.p_name,item.p_price)">
 	{{item.p_name}}</h2>
-				<p ng-click="showProductInfo(item.p_id,item.p_description,item.p_image_id,item.p_name,item.p_price)">Price: {{item.p_price | currency: '?'}}</p>
+				<p ng-click="showProductInfo(item.p_id,item.p_description,item.p_image_id,item.p_name,item.p_price)">Price: {{item.p_price | currency: '&#8369 '}}</p>
 			</ion-item>
 		</ion-list>
 		<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%">

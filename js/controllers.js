@@ -1,4 +1,8 @@
-angular.module('app.controllers', []).controller('menuCtrl', function($scope, $http, sharedCartService, sharedFilterService) {
+angular.module('app.controllers', [])
+.controller('indexCtrl', function($scope, cartItemCountService) {
+	$scope.$watch(function() { return cartItemCountService.count; }, function(value) { $scope.number = value; });
+})
+.controller('menuCtrl', function($scope, $http, sharedCartService, sharedFilterService, cartItemCountService) {
 	var cart = sharedCartService.cart;
 	sessionStorage.setItem('productsOnCart', []);
 	$scope.slide_items = [{
@@ -51,14 +55,17 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 	// Add items to cart.
 	$scope.addToCart = function(id, image, name, price, $ionicPopup) {
 		cart.add(id, image, name, price, 1);
+		cartItemCountService.increment(1);
 	};
-}).controller('cartCtrl', function($scope, $http, sharedCartService, $ionicPopup, $state) {
+})
+.controller('cartCtrl', function($scope, $http, $ionicPopup, $state, sharedCartService, cartItemCountService) {
 	$scope.$on('$stateChangeSuccess', function() {
 		$scope.cart = sharedCartService.cart;
 		$scope.total_qty = sharedCartService.total_qty;
 		$scope.total_amount = sharedCartService.total_amount;
 	});
 	$scope.removeFromCart = function(c_id) {
+		cartItemCountService.decrement($scope.cart.findQuantity(c_id));
 		$scope.cart.drop(c_id);
 		$scope.total_qty = sharedCartService.total_qty;
 		$scope.total_amount = sharedCartService.total_amount;
@@ -67,11 +74,13 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 		$scope.cart.increment(c_id);
 		$scope.total_qty = sharedCartService.total_qty;
 		$scope.total_amount = sharedCartService.total_amount;
+		cartItemCountService.increment(1);
 	};
 	$scope.dec = function(c_id) {
 		$scope.cart.decrement(c_id);
 		$scope.total_qty = sharedCartService.total_qty;
 		$scope.total_amount = sharedCartService.total_amount;
+		cartItemCountService.decrement(1);
 	};
 	$scope.checkout = function() {
 		if ($scope.total_amount > 0) {
@@ -118,7 +127,8 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 			}
 		});
 	};
-}).controller('checkOutCtrl', function($scope, sharedCartService, $http, $ionicPopup) {
+})
+.controller('checkOutCtrl', function($scope, sharedCartService, $http, $ionicPopup) {
 	$scope.validateLocation = function(addressToValidate) {
 		// Handle the location validation using a boolean
 		// property
@@ -182,9 +192,8 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 			});
 		}
 	}
-}).controller('indexCtrl', function($scope, sharedCartService) {
-	// $scope.total = 10;
-}).controller('loginCtrl', function($scope, $http, $ionicPopup, $state, $ionicHistory) {
+})
+.controller('loginCtrl', function($scope, $http, $ionicPopup, $state, $ionicHistory) {
 	$scope.user = {};
 	$scope.login = function() {
 		auth_url = "http://iligtas.ph/hotshots/user-details.php?e=" + $scope.user.email + "&p=" + $scope.user.password;
@@ -218,7 +227,8 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 			});
 		});
 	};
-}).controller('signupCtrl', function($scope, $http, $ionicPopup, $state, $ionicHistory) {
+})
+.controller('signupCtrl', function($scope, $http, $ionicPopup, $state, $ionicHistory) {
 	$scope.data = {
 		email: '',
 		password: '',
@@ -286,7 +296,8 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 		}
 		return isValidLocation;
 	};
-}).controller('filterByCtrl', function($scope, sharedFilterService) {
+})
+.controller('filterByCtrl', function($scope, sharedFilterService) {
 	$scope.Categories = [{
 		id: 1,
 		name: 'Beverages'
@@ -337,13 +348,15 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 		sharedFilterService.category = c_string;
 		window.location.href = "#/page1";
 	};
-}).controller('sortByCtrl', function($scope, sharedFilterService) {
+})
+.controller('sortByCtrl', function($scope, sharedFilterService) {
 	$scope.sort = function(sort_by) {
 		sharedFilterService.sort = sort_by;
 		console.log('sort', sort_by);
 		window.location.href = "#/page1";
 	};
-}).controller('paymentCtrl', function($scope) {}).controller('profileCtrl', function($scope, $rootScope, $ionicHistory, $state) {
+})
+.controller('paymentCtrl', function($scope) {}).controller('profileCtrl', function($scope, $rootScope, $ionicHistory, $state) {
 	$scope.loggedin_id = sessionStorage.getItem('loggedin_id');
 	$scope.loggedin_name = sessionStorage.getItem('loggedin_name');
 	$scope.loggedin_phone = sessionStorage.getItem('loggedin_phone');
@@ -362,7 +375,9 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 			reload: true
 		});
 	};
-}).controller('myOrdersCtrl', function($scope) {}).controller('editProfileCtrl', function($scope) {}).controller('favoritesCtrl', function($scope, $http, $ionicPopup, $state, $ionicHistory) {
+})
+.controller('myOrdersCtrl', function($scope) {}).controller('editProfileCtrl', function($scope) {})
+.controller('favoritesCtrl', function($scope, $http, $ionicPopup, $state, $ionicHistory) {
 	$scope.fav = {
 		comment: ''
 	};
@@ -384,7 +399,8 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 			});
 		}
 	}
-}).controller('productPageCtrl', function($scope, sharedCartService) {
+})
+.controller('productPageCtrl', function($scope, sharedCartService) {
 	var cart = sharedCartService.cart;
 	//onload event
 	angular.element(document).ready(function() {
@@ -397,7 +413,9 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 			cart.add(id, image.split('img/').join("").split('.png').join(""), name, price, 1);
 		};
 	});
-}).controller('mapCtrl', function($scope) {
+})
+.controller('mapCtrl', function($scope) {
+	/*
 	$scope.initMap = function() {
 		var mapCanvas = document.getElementById("map");
 		var center = new google.maps.LatLng(14.8203331, 120.2811585);
@@ -423,7 +441,9 @@ angular.module('app.controllers', []).controller('menuCtrl', function($scope, $h
 		})
 	}
 	$scope.initMap();
-}).controller('orderStatusCtrl', function($scope, $interval) {
+	*/
+})
+.controller('orderStatusCtrl', function($scope, $interval) {
 	$scope.Timer = null;
 	$scope.Timer = $interval(function () {
 		//Display the current time.
