@@ -3,7 +3,7 @@
 		<ion-list>
 			<div class="card">
 				<ion-item class="item-divider text-center">Order Status</ion-item>
-				<img src="img/loader.gif" 
+				<img id="stat" src="" 
 					style="width:110px;
 					height:100px;
 					margin-left:auto;
@@ -12,9 +12,10 @@
 					margin-top: 10px;
 					margin-bottom: 10px;" />
 				<div class="item text-center">
-					Delivery is on the way to you...
+					{{msg}}
 				</div>
 			</div>
+			<!--<a href="#" class="button button-assertive button-block icon-left ion-close-round">Cancel Order</a>-->
 		</ion-list>
 	</ion-content>
 </ion-view>

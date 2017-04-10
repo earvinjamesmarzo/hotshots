@@ -86,46 +86,65 @@ angular.module('app.controllers', [])
 		if ($scope.total_amount > 0) {
 			if (sessionStorage.getItem('loggedin_id') != null) {
 				$scope.submitCart();
-			} else {
+			} 
+			/*else {
 				$state.go('checkOut');
-			}
+			}*/
 		} else {
 			var alertPopup = $ionicPopup.alert({
 				title: 'No item in your Cart',
-				template: 'Please add Some Items!'
+				template: 'Please add some items!'
 			});
 		}
 	};
 	$scope.submitCart = function() {
-		var confirmPopup = $ionicPopup.confirm({
-			title: 'Submit Order',
-			template: 'Do you want to submit your order?'
-		}).then(function(res) {
-			if (res) {
-				$scope.loggedin_id = sessionStorage.getItem('loggedin_id');
-				$scope.loggedin_name = sessionStorage.getItem('loggedin_name');
-				$scope.loggedin_phone = sessionStorage.getItem('loggedin_phone');
-				$scope.loggedin_address = sessionStorage.getItem('loggedin_address');
-				var products = [];
-				for (var i = 0; i < sharedCartService.cart.length; i++) {
-					products.push(sharedCartService.cart[i])
+		var cart = sharedCartService;
+		var hasTransaction = sessionStorage.getItem('hasTransaction');
+		if (hasTransaction == 1){
+			var alertPopup = $ionicPopup.alert({
+				title: 'Order Pending.',
+				template: 'You have a pending order.'
+			});
+			cart.cart = [];
+			cart.total_qty = 0;
+			cart.total_amount = 0;
+			cartItemCountService.clear();
+			window.location.href = "#/page15";
+		}
+		else {
+			var confirmPopup = $ionicPopup.confirm({
+				title: 'Submit Order',
+				template: 'Do you want to submit your order?'
+			}).then(function(res) {
+				if (res) {
+					$scope.loggedin_id = sessionStorage.getItem('loggedin_id');
+					$scope.loggedin_name = sessionStorage.getItem('loggedin_name');
+					$scope.loggedin_phone = sessionStorage.getItem('loggedin_phone');
+					$scope.loggedin_address = sessionStorage.getItem('loggedin_address');
+					var products = [];
+					for (var i = 0; i < sharedCartService.cart.length; i++) {
+						products.push(sharedCartService.cart[i])
+					}
+					var today = new Date();
+					$http.get('http://iligtas.ph/hotshots/checkout.php?' + 'name=' + $scope.loggedin_name + '&contact=' + $scope.loggedin_phone + '&address=' + $scope.loggedin_address + '&products=' + JSON.stringify(products) + '&total=' + sharedCartService.total_amount + '&date=' +today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+' '+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()).success(function(data) {
+						var alertPopup = $ionicPopup.alert({
+							title: 'Successfully checked out.',
+							template: '<center>Checkout Total: <b>' + sharedCartService.total_amount + '</b></center>'
+						});
+						cart.cart = [];
+						cart.total_qty = 0;
+						cart.total_amount = 0;
+						cartItemCountService.clear();
+						sessionStorage.setItem('hasTransaction', 1);
+						
+						$state.go('orderStatus', {}, {
+							location: "replace",
+							reload: true
+						});
+					});
 				}
-				$http.get('http://iligtas.ph/hotshots/checkout.php?' + 'name=' + $scope.loggedin_name + '&contact=' + $scope.loggedin_phone + '&address=' + $scope.loggedin_address + '&products=' + JSON.stringify(products) + '&total=' + sharedCartService.total_amount).success(function(data) {
-					var alertPopup = $ionicPopup.alert({
-						title: 'Successfully checked out.',
-						template: '<center>Checkout Total: <b>' + sharedCartService.total_amount + '</b></center>'
-					});
-					var cart = sharedCartService;
-					cart.cart = [];
-					cart.total_qty = 0;
-					cart.total_amount = 0;
-					$state.go('menu', {}, {
-						location: "replace",
-						reload: true
-					});
-				});
-			}
-		});
+			});
+		}
 	};
 })
 .controller('checkOutCtrl', function($scope, sharedCartService, $http, $ionicPopup) {
@@ -203,6 +222,7 @@ angular.module('app.controllers', [])
 			sessionStorage.setItem('loggedin_name', $scope.user_details.u_name);
 			sessionStorage.setItem('loggedin_phone', $scope.user_details.u_phone);
 			sessionStorage.setItem('loggedin_address', $scope.user_details.u_address);
+			sessionStorage.setItem('hasTransaction', 0);
 			$ionicHistory.nextViewOptions({
 				disableAnimate: true,
 				disableBack: true
@@ -237,15 +257,30 @@ angular.module('app.controllers', [])
 	};
 	$scope.signup = function(data) {
 		if ($scope.data.email == undefined || $scope.data.email.length == 0) {
-			alert("Please enter a valid email address.")
+			var alertPopup = $ionicPopup.alert({
+				title: "Invalid Email",
+				template: "Please enter a valid email address."
+			});
 		} else if ($scope.data.password == undefined || $scope.data.password.length == 0) {
-			alert("Please enter your phone number.")
+			var alertPopup = $ionicPopup.alert({
+				title: "Enter Password",
+				template: "Please enter your password."
+			});
 		} else if ($scope.data.phone == null || $scope.data.phone == undefined || $scope.data.phone.length == 0) {
-			alert("Please enter your phone number.")
+			var alertPopup = $ionicPopup.alert({
+				title: "Enter Phone Number",
+				template: "Please enter your phone number."
+			});
 		} else if ($scope.data.address == undefined || $scope.data.address.length == 0) {
-			alert("Please enter your address.")
+			var alertPopup = $ionicPopup.alert({
+				title: "Enter Address",
+				template: "Please enter your address."
+			});
 		} else if (!$scope.validateLocation($scope.data.address)) {
-			alert("Delivery service is unavailable at your location.")
+			var alertPopup = $ionicPopup.alert({
+				title: "Delivery Service Unavailable",
+				template: "Delivery service is unavailable at your location."
+			});
 		} else {
 			var signup_url = "http://iligtas.ph/hotshots/signup.php";
 			var signup_obj = "?un=" + data.email + "&ps=" + data.password + "&ph=" + data.phone + "&add=" + data.address;
@@ -253,6 +288,7 @@ angular.module('app.controllers', [])
 				if (response == "0") {
 					$scope.title = "Account Created";
 					$scope.template = "Your account has been successfully created!";
+					window.location.href = "#/page4";
 				} else {
 					$scope.title = "Email Already Exists";
 					$scope.template = "Please enter another email.";
@@ -356,7 +392,8 @@ angular.module('app.controllers', [])
 		window.location.href = "#/page1";
 	};
 })
-.controller('paymentCtrl', function($scope) {}).controller('profileCtrl', function($scope, $rootScope, $ionicHistory, $state) {
+.controller('paymentCtrl', function($scope) {})
+.controller('profileCtrl', function($scope, $rootScope, $ionicHistory, $state) {
 	$scope.loggedin_id = sessionStorage.getItem('loggedin_id');
 	$scope.loggedin_name = sessionStorage.getItem('loggedin_name');
 	$scope.loggedin_phone = sessionStorage.getItem('loggedin_phone');
@@ -376,7 +413,8 @@ angular.module('app.controllers', [])
 		});
 	};
 })
-.controller('myOrdersCtrl', function($scope) {}).controller('editProfileCtrl', function($scope) {})
+.controller('myOrdersCtrl', function($scope) {})
+.controller('editProfileCtrl', function($scope) {})
 .controller('favoritesCtrl', function($scope, $http, $ionicPopup, $state, $ionicHistory) {
 	$scope.fav = {
 		comment: ''
@@ -400,7 +438,7 @@ angular.module('app.controllers', [])
 		}
 	}
 })
-.controller('productPageCtrl', function($scope, sharedCartService) {
+.controller('productPageCtrl', function($scope, sharedCartService, cartItemCountService) {
 	var cart = sharedCartService.cart;
 	//onload event
 	angular.element(document).ready(function() {
@@ -411,6 +449,7 @@ angular.module('app.controllers', [])
 		$scope.price = sessionStorage.getItem('product_info_price');
 		$scope.addToCart = function(id, image, name, price, $ionicPopup) {
 			cart.add(id, image.split('img/').join("").split('.png').join(""), name, price, 1);
+			cartItemCountService.increment(1);
 		};
 	});
 })
@@ -443,14 +482,48 @@ angular.module('app.controllers', [])
 	$scope.initMap();
 	*/
 })
-.controller('orderStatusCtrl', function($scope, $interval) {
-	$scope.Timer = null;
-	$scope.Timer = $interval(function () {
-		//Display the current time.
-		console.log("ASD");
-		
-		//Your order has been declined. Please try again.
-		//Delivery is on the way to you.
-		//Your order is being processed.
-	}, 1000);
+.controller('orderStatusCtrl', function($scope, $http, $interval, countdownService) {
+	status_url = "http://iligtas.ph/hotshots/orderStatus.php?name=" + sessionStorage.getItem('loggedin_name');
+	
+	$scope.$on('$stateChangeSuccess', function() {
+		$scope.msg = "Please wait...";
+		document.getElementById("stat").src="img/loader.gif";
+		$scope.startStatusUpdate();
+	});
+	
+	$scope.startStatusUpdate = function() {
+		$scope.statustimer = $interval(function () {
+			$http.get(status_url)
+			.success(function(response) {
+				if (response == -1){
+					console.log("CLEAR");
+					$scope.msg = "You have no pending orders.";
+					document.getElementById("stat").src="img/emptycart.jpg";
+					$scope.stopStatusUpdate();
+				}
+				else if (response == 0){
+					console.log("PROCESSING");
+					$scope.msg = "Your order is being processed.";
+					document.getElementById("stat").src="img/loader.gif";
+				}
+				else if (response == 1){
+					console.log("DELIVERING");
+					$scope.msg = "Delivery is on its way to you.";
+					document.getElementById("stat").src="img/deliveryguy.jpg";
+				}
+				else if (response == 2){
+					console.log("DECLINED");
+					$scope.msg = "Your order has been declined.\r\nPlease try again.";
+					document.getElementById("stat").src="img/emptycart.jpg";
+					sessionStorage.setItem('hasTransaction', 0);
+					$scope.stopStatusUpdate();
+				}
+			});
+		}, 3000);
+	};
+	
+	$scope.stopStatusUpdate = function() {
+		$interval.cancel($scope.statustimer);
+		console.log("Status update timer stopped.");
+	}
 });
