@@ -56,23 +56,23 @@ angular.module('app.services', [])
 		return result;
 	};
 	cartObj.cart.drop = function(id) {
-		var temp = cartObj.cart[cartObj.cart.find(id)];
+		var temp = cartObj.cart[cartObj.find(id)];
 		cartObj.total_qty -= parseInt(temp.cart_item_qty);
 		cartObj.total_amount -= (parseInt(temp.cart_item_qty) * parseInt(temp.cart_item_price));
-		cartObj.cart.splice(cartObj.cart.find(id), 1);
+		cartObj.cart.splice(cartObj.find(id), 1);
 	};
 	cartObj.cart.increment = function(id) {
-		cartObj.cart[cartObj.cart.find(id)].cart_item_qty += 1;
+		cartObj.cart[cartObj.find(id)].cart_item_qty += 1;
 		cartObj.total_qty += 1;
-		cartObj.total_amount += (parseInt(cartObj.cart[cartObj.cart.find(id)].cart_item_price));
+		cartObj.total_amount += (parseInt(cartObj.cart[cartObj.find(id)].cart_item_price));
 	};
 	cartObj.cart.decrement = function(id) {
 		cartObj.total_qty -= 1;
-		cartObj.total_amount -= parseInt(cartObj.cart[cartObj.cart.find(id)].cart_item_price);
-		if (cartObj.cart[cartObj.cart.find(id)].cart_item_qty == 1) { // if the cart item was only 1 in qty
-			cartObj.cart.splice(cartObj.cart.find(id), 1); //edited
+		cartObj.total_amount -= parseInt(cartObj.cart[cartObj.find(id)].cart_item_price);
+		if (cartObj.cart[cartObj.find(id)].cart_item_qty == 1) { // if the cart item was only 1 in qty
+			cartObj.cart.splice(cartObj.find(id), 1); //edited
 		} else {
-			cartObj.cart[cartObj.cart.find(id)].cart_item_qty -= 1;
+			cartObj.cart[cartObj.find(id)].cart_item_qty -= 1;
 		}
 	};
 	return cartObj;
