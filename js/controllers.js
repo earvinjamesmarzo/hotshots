@@ -484,24 +484,37 @@ angular.module('app.controllers', [])
 })
 .controller('orderStatusCtrl', function($scope, $http, $interval, countdownService) {
 	status_url = "http://iligtas.ph/hotshots/orderStatus.php?name=" + sessionStorage.getItem('loggedin_name');
+	var statustimer;
 	
 	$scope.$on('$stateChangeSuccess', function() {
 		$scope.msg = "Please wait...";
 		document.getElementById("stat").src="img/loader.gif";
-		$scope.startStatusUpdate();
+		
+		if (sessionStorage.getItem('hasTransaction') == 0){
+			console.log("CLEAR");
+			$scope.msg = "You have no pending orders.";
+			document.getElementById("stat").src="img/emptycart.jpg";
+		}
+		else {
+			$scope.startStatusUpdate();
+		}
+		
 	});
 	
 	$scope.startStatusUpdate = function() {
 		$scope.statustimer = $interval(function () {
 			$http.get(status_url)
 			.success(function(response) {
+				/*
 				if (response == -1){
 					console.log("CLEAR");
 					$scope.msg = "You have no pending orders.";
 					document.getElementById("stat").src="img/emptycart.jpg";
 					$scope.stopStatusUpdate();
 				}
-				else if (response == 0){
+				else 
+				*/
+				if (response == 0){
 					console.log("PROCESSING");
 					$scope.msg = "Your order is being processed.";
 					document.getElementById("stat").src="img/loader.gif";
@@ -513,7 +526,13 @@ angular.module('app.controllers', [])
 				}
 				else if (response == 2){
 					console.log("DECLINED");
-					$scope.msg = "Your order has been declined.\r\nPlease try again.";
+					$scope.msg = "Your order has been declined.";
+					document.getElementById("stat").src="img/emptycart.jpg";
+					sessionStorage.setItem('hasTransaction', 0);
+					$scope.stopStatusUpdate();
+				}
+				else if (response == 3){
+					console.log("DELIVERED");
 					document.getElementById("stat").src="img/emptycart.jpg";
 					sessionStorage.setItem('hasTransaction', 0);
 					$scope.stopStatusUpdate();
