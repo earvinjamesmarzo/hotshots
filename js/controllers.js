@@ -533,6 +533,7 @@ angular.module('app.controllers', [])
 				}
 				else if (response == 3){
 					console.log("DELIVERED");
+					$scope.msg = "You have no pending orders.";
 					document.getElementById("stat").src="img/emptycart.jpg";
 					sessionStorage.setItem('hasTransaction', 0);
 					$scope.stopStatusUpdate();
