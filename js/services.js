@@ -77,21 +77,7 @@ angular.module('app.services', [])
 	};
 	return cartObj;
 }])
-.factory('cartItemCountService', [function() {
-	var itemsObj = {};
-	itemsObj.count = 0;
-	itemsObj.increment = function(value) {
-		itemsObj.count += value;
-	};
-	itemsObj.decrement = function(value) {
-		itemsObj.count -= value;
-	};
-	itemsObj.clear = function() {
-		itemsObj.count = 0;
-	};
-	return itemsObj;
-}])
-.factory('sharedFilterService', [function() {
+.factory('sharedFilterService', function() {
 	var obj = {};
 	obj.str = "http://iligtas.ph/hotshots/food_menu.php?till=";
 	obj.sort = "";
@@ -111,8 +97,22 @@ angular.module('app.services', [])
 		return obj.str;
 	};
 	return obj;
-}])
-.factory('countdownService', ['$timeout', function($timeout) {
+})
+.factory('itemCounterService', function() {
+	var itemsObj = {};
+	itemsObj.count = 0;
+	itemsObj.increment = function(value) {
+		itemsObj.count += value;
+	};
+	itemsObj.decrement = function(value) {
+		itemsObj.count -= value;
+	};
+	itemsObj.clear = function() {
+		itemsObj.count = 0;
+	};
+	return itemsObj;
+})
+.factory('timerService', function($timeout) {
 	var cdObj = {};
 	cdObj.mins = 30;
 	cdObj.disp = "";
@@ -138,52 +138,37 @@ angular.module('app.services', [])
 	};
 	
 	cdObj.stop = function(){
-		cdObj.disp = "";
 		$timeout.cancel(timeoutObj);
+		cdObj.disp = "";
 		cdObj.mins = 30;
     };
 	
 	return cdObj;
-}])
-.factory('statusUpdateService', ['$interval', function($interval) {
-	var updObj = {};
-	updObj.msg = "Please wait...";
-	var statustimer;
-	
-	status_url = "http://iligtas.ph/hotshots/orderStatus.php?name=" + sessionStorage.getItem('loggedin_name');
-	
-	updObj.startStatusUpdate = function() {
-		console.log("1");
-		statustimer = $interval(function () {
-			$http.get(status_url)
-			.success(function(response) {
-				if (response == -1){
-					updObj.msg = "You have no pending orders.";
-					document.getElementById("stat").src="img/emptycart.jpg";
-					updObj.stopStatusUpdate();
+})
+.factory('orderSessionService', function($http) {
+	return {
+		getOrderStatus : function(n) {
+			serviceurl = "http://iligtas.ph/hotshots/order-status.php?n=" + n;
+			$http.get(serviceurl)
+			.then(function(response) {
+				if (response.data == -1) {
+					sessionStorage.setItem('hasTransaction', 0);
 				}
-				else if (response == 0){
-					updObj.msg = "Your order is being processed.";
-					document.getElementById("stat").src="img/loader.gif";
+				else {
+					sessionStorage.setItem('hasTransaction', 1);
 				}
-				else if (response == 1){
-					updObj.msg = "Delivery is on its way to you.";
-					document.getElementById("stat").src="img/deliveryguy.jpg";
-				}
-				else if (response == 2){
-					updObj.msg = "Your order has been declined.\r\nPlease try again.";
-					document.getElementById("stat").src="img/emptycart.jpg";
-					updObj.stopStatusUpdate();
-				}
-			});
-		}, 3000);
-	};
-	
-	updObj.stopStatusUpdate = function() {
-		$interval.cancel(statustimer);
-		console.log("Status update timer stopped.");
+			},
+			function(response){
+			})
+		}
 	}
-	
-	return updObj;
-}])
-.service('BlankService', [function() {}]);
+})
+.factory('orderStatusService', function($http) {
+	return {
+		getOrderStatus : function(n) {
+			serviceurl = "http://iligtas.ph/hotshots/order-status.php?n=" + n;
+			return $http.get(serviceurl);
+		}
+	}
+})
+.service('BlankService', function() {});
